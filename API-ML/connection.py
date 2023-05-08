@@ -13,7 +13,6 @@ environment = Environment()
 content_dir = 'src/files'
 file_name = 'DisasterDeclarationsSummaries'
 full_path = os.path.join(content_dir, file_name)
-
 environment.create_folder(content_dir)
 
 
@@ -23,8 +22,10 @@ endpoint = "DisasterDeclarationsSummaries"
 params = {
     "$orderby": "declarationDate desc",
 }
-
 url = base_url + endpoint
+
+
+
 
 
 #Hacemos una petición para conocer el numero de resultados totales que se disponen
@@ -35,6 +36,10 @@ response = requests.get(url,params="$inlinecount=allpages&$select=id&$top=1")
 registres = response.json()['metadata']['count']
 
 n_loop = math.ceil(registres/top) #Peticiones necesarias
+
+
+
+
 
 #Petición lanzada desde un bucle while 
 
@@ -56,11 +61,18 @@ outFile = open(full_path+'.json', "w")  # Usamos el modo 'w' para sobrescribir e
 outFile.write(json.dumps(data))  # Escribimos todo el array en el archivo
 outFile.close()
 
+
+
+
+
 #Comprobación de los registros grabados
 inFile = open(full_path + '.json', 'r')
 data = json.load(inFile)
 print("END: " + str(datetime.now()) + ',' + str(len(data)) + 'records in file')
 inFile.close()
+
+
+
 
 # cargar los datos desde el archivo JSON
 with open(full_path+'.json', 'r') as f:
