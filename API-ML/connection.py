@@ -26,8 +26,6 @@ url = base_url + endpoint
 
 
 
-
-
 #Hacemos una petición para conocer el numero de resultados totales que se disponen
 top=1000
 skip=0
@@ -36,8 +34,6 @@ response = requests.get(url,params="$inlinecount=allpages&$select=id&$top=1")
 registres = response.json()['metadata']['count']
 
 n_loop = math.ceil(registres/top) #Peticiones necesarias
-
-
 
 
 
@@ -62,16 +58,11 @@ outFile.write(json.dumps(data))  # Escribimos todo el array en el archivo
 outFile.close()
 
 
-
-
-
 #Comprobación de los registros grabados
 inFile = open(full_path + '.json', 'r')
 data = json.load(inFile)
 print("END: " + str(datetime.now()) + ',' + str(len(data)) + 'records in file')
 inFile.close()
-
-
 
 
 # cargar los datos desde el archivo JSON
