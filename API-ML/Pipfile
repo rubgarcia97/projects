@@ -10,6 +10,8 @@ idna = "==3.4"
 requests = "==2.29.0"
 urllib3 = "==1.26.15"
 pandas = "*"
+"plotly.express" = "*"
+nbformat = "*"
 
 [dev-packages]
 ipykernel = "*"

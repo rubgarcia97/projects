@@ -49,11 +49,11 @@ while (i < n_loop):
     content = response.json()
     data.extend(content)  # Agregamos cada objeto JSON al array
     i += 1
-    skip = 1 * top
+    skip = i * top
 
     print("iteration " +str(i) + " done")
 
-outFile = open(full_path+'.json', "w")  # Usamos el modo 'w' para sobrescribir el archivo
+outFile = open(full_path+'.json', "w")  
 outFile.write(json.dumps(data))  # Escribimos todo el array en el archivo
 outFile.close()
 
