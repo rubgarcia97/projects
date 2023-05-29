@@ -17,6 +17,7 @@ jupyter-dash = "*"
 seaborn = "*"
 us = "*"
 geopy = "*"
+kaleido = "*"
 
 [dev-packages]
 ipykernel = "*"
