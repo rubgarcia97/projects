@@ -18,6 +18,7 @@ seaborn = "*"
 us = "*"
 geopy = "*"
 kaleido = "*"
+scikit-learn = "*"
 
 [dev-packages]
 ipykernel = "*"
