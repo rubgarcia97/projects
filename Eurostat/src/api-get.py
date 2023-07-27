@@ -1,13 +1,12 @@
 import eurostat
 import sys
-
-from utils.environment import Environment
+import os
 from utils.client import EurostatAPIClient
-from utils.gui import MainWindow
+
+repo = eurostat.get_toc_df()
+f = eurostat.subset_toc_df(repo,'Road equipment: load capacity of lorries')
 
 
-MainWindow = MainWindow()
+#print(f.axes[0][0])
 
-
-
-MainWindow.run()
+print(os.getcwd())

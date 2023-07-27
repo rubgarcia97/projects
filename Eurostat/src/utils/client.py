@@ -1,4 +1,6 @@
 import eurostat
+import csv
+import os
 
 class EurostatAPIClient():
 
@@ -9,10 +11,10 @@ class EurostatAPIClient():
 
     def get_repository(self):
     
-        toc = eurostat.get_toc()
-        repo = [toc[i][0] for i in range(1, len(toc))]
+        repo = eurostat.get_toc_df()
+        dic = repo.set_index('title')['code'].to_dict()
         
-        return repo
+        return dic
 
     def get_params (self):
         self.__pars = eurostat.get_pars(self.__name)
@@ -23,5 +25,37 @@ class EurostatAPIClient():
         dic = eurostat.get_dic(self.__name,self.__pars[2],full=True, frmt="list",lang="en")
         print(dic)
 
-    def database (self):
-        print('Hello')
+    def get_database (self, code):
+        
+        eurostat.get_data(code)
+
+
+class GUIToolkit ():
+
+    def __init__(self):
+        pass
+
+    def current_text(self,s):
+
+        self.selected_option = s
+
+    def push_button (self):
+
+        pass
+
+
+    def download_database (self,code):
+
+        if code is not None:
+
+            ruta = './data'
+            os.chdir(ruta)
+
+            eurostat.get_data(code)
+
+    
+
+       
+
+
+        
