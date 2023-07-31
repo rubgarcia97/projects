@@ -65,11 +65,20 @@ class MainWindow(QMainWindow):
             print("------------INICIANDO DESCARGA-------------")
 
             try:
-                 EurostatAPIClient().get_database(self.selected_option)
-                 print("La descarga ha comenzando a ejecutarse correctamente")
+                 
+                print("La descarga ha comenzando a ejecutarse correctamente/n")
+                print("--------------------------------")
+                print(f'El fichero seleccionado ha sido: {self.selected_option}')
 
-            except Exception as e:
-                print(f'Error al ejecutar la funcion de descarga: {str(e)}')
+                EurostatAPIClient().get_database(self.selected_option)
+
+                print('Archivo descargado correctamente.')
+
+            except Exception as error:
+
+                print(f'Error al ejecutar la funcion de descarga: {str(error)}')
+        
+            print("------------ GRACIAS ! ------------")
             
 
 

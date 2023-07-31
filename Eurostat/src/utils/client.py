@@ -27,7 +27,10 @@ class EurostatAPIClient():
 
     def get_database (self, code):
         
-        eurostat.get_data(code)
+        pattern_path = "./data"
+        
+        data = eurostat.get_data_df(code)
+        data.to_csv(os.path.join(pattern_path,code + '.csv'), index=False)
 
 
 class GUIToolkit ():
