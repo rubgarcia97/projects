@@ -1,0 +1,49 @@
+Vamos a proceder a analizar la estructura base del dataset descargado, el cual nos pretende mostrar la evolución del GDP por cada país y grupo de países 
+
+
+Muestra del dataset: 
+
+                DATAFLOW        LAST UPDATE freq           unit na_item geo  \
+0  ESTAT:SDG_08_10(1.0)  16/08/23 23:00:00    A  CLV10_EUR_HAB    B1GQ  AL   
+1  ESTAT:SDG_08_10(1.0)  16/08/23 23:00:00    A  CLV10_EUR_HAB    B1GQ  AL   
+2  ESTAT:SDG_08_10(1.0)  16/08/23 23:00:00    A  CLV10_EUR_HAB    B1GQ  AL   
+3  ESTAT:SDG_08_10(1.0)  16/08/23 23:00:00    A  CLV10_EUR_HAB    B1GQ  AL   
+4  ESTAT:SDG_08_10(1.0)  16/08/23 23:00:00    A  CLV10_EUR_HAB    B1GQ  AL   
+
+   TIME_PERIOD  OBS_VALUE OBS_FLAG  
+0         2000     1700.0      NaN  
+1         2001     1850.0      NaN  
+2         2002     1940.0      NaN  
+3         2003     2060.0      NaN  
+4         2004     2180.0      NaN   
+
+
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1801 entries, 0 to 1800
+Data columns (total 9 columns):
+ #   Column       Non-Null Count  Dtype  
+---  ------       --------------  -----  
+ 0   DATAFLOW     1801 non-null   object 
+ 1   LAST UPDATE  1801 non-null   object 
+ 2   freq         1801 non-null   object 
+ 3   unit         1801 non-null   object 
+ 4   na_item      1801 non-null   object 
+ 5   geo          1801 non-null   object 
+ 6   TIME_PERIOD  1801 non-null   int64  
+ 7   OBS_VALUE    1796 non-null   float64
+ 8   OBS_FLAG     128 non-null    object 
+dtypes: float64(1), int64(1), object(7)
+memory usage: 126.8+ KB
+Como características básicas del mismo: 
+
+ None 
+
+        TIME_PERIOD     OBS_VALUE
+count  1801.000000   1796.000000
+mean   2010.933926  12556.267038
+std       6.549264  17772.011135
+min    2000.000000    -15.200000
+25%    2005.000000      2.100000
+50%    2011.000000   1895.000000
+75%    2017.000000  23127.500000
+max    2022.000000  88120.000000
