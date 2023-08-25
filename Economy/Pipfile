@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 pandas = "*"
 datetime = "*"
+seaborn = "*"
+matplotlib = "*"
 
 [dev-packages]
 ipykernel = "*"
